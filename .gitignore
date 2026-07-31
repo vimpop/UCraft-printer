@@ -1,0 +1,37 @@
+# Build output
+build/
+build-*/
+cmake-build-*/
+
+# crosstool-ng local install
+toolchain/crosstool-ng/
+toolchain/include/
+toolchain/build.log
+toolchain/.config
+toolchain/.config.old
+toolchain/.build
+
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# Firmware/toolchain artifacts
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
