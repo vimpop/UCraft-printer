@@ -1,6 +1,7 @@
 # UCraft-printer
 Run a Minecraft server on a **Samsung C410W** printer (firmware V3.00.02.20, DEC-15-2015).
 
+Based upon [UCraft](https://github.com/vimpop/UCraft).
 ## How it works
 
 Two-stage exploit delivered over the network:
@@ -9,13 +10,17 @@ Two-stage exploit delivered over the network:
 2. **TCP delivery** — the stager listens on port `25564`, receives `application.bin` (the UCraft Minecraft server), and spawns it as an RTOS task which starts the Minecraft server on port `25565`.
 
 ## Setup
+ Build crosstool-ng ARM big-endian toolchain (~20 min on a modern CPU)
+```bash
+./build_toolchain.sh       
+```
+
+## Compiling
 
 ```bash
-./build_toolchain.sh                           # build crosstool-ng ARM big-endian toolchain
 cmake -B build -DCMAKE_TOOLCHAIN_FILE=toolchain-armeb-eabi.cmake -G Ninja
 ninja -C build
 ```
-
 ## Deploy
 
 ```bash
