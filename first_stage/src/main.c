@@ -78,6 +78,7 @@ void entry()
             return;
         }
         while(1){
+            led_show();
             yield_task(100);
         }
         return;
